@@ -444,3 +444,38 @@ test.c:439:59: error: invalid use of incomplete typedef ‘HashMap’ {aka ‘st
 cc1: all warnings being treated as errors
 Compilation failed
 b7c3b65
+Thu 20 Apr 2023 12:22:55 AM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:56:3: error: unknown type name ‘Hashmap’; did you mean ‘HashMap’?
+   56 |   Hashmap *map = (Hashmap *) malloc(sizeof(Hashmap));
+      |   ^~~~~~~
+      |   HashMap
+hashmap.c:56:19: error: ‘Hashmap’ undeclared (first use in this function); did you mean ‘HashMap’?
+   56 |   Hashmap *map = (Hashmap *) malloc(sizeof(Hashmap));
+      |                   ^~~~~~~
+      |                   HashMap
+hashmap.c:56:19: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:56:28: error: expected expression before ‘)’ token
+   56 |   Hashmap *map = (Hashmap *) malloc(sizeof(Hashmap));
+      |                            ^
+hashmap.c:60:6: error: request for member ‘buckets’ in something not a structure or union
+   60 |   map->buckets = (Pair **) malloc(sizeof(Pair *));
+      |      ^~
+hashmap.c:61:6: error: request for member ‘size’ in something not a structure or union
+   61 |   map->size = 0;
+      |      ^~
+hashmap.c:62:6: error: request for member ‘capacity’ in something not a structure or union
+   62 |   map->capacity = capacity;
+      |      ^~
+hashmap.c:63:6: error: request for member ‘current’ in something not a structure or union
+   63 |   map->current = -1;
+      |      ^~
+hashmap.c:64:10: error: returning ‘int *’ from a function with incompatible return type ‘HashMap *’ {aka ‘struct HashMap *’} [-Werror=incompatible-pointer-types]
+   64 |   return map;
+      |          ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+ffe87b7
