@@ -1168,3 +1168,9 @@ hashmap.c:61:7: error: ‘buckets’ undeclared (first use in this function)
 hashmap.c:61:7: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 a711a07
+Thu 20 Apr 2023 12:26:51 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|6
+total_score: 0/70
+97bb224
