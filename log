@@ -1188,3 +1188,9 @@ In file included from test.c:2:
       |              ^~~~~~
 Compilation failed
 20c6c5b
+Thu 20 Apr 2023 12:27:59 AM UTC: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  1|5
+total_score: 10/70
+08b399f
