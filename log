@@ -1194,3 +1194,20 @@ Thu 20 Apr 2023 12:27:59 AM UTC:
  tests:  1|5
 total_score: 10/70
 08b399f
+Mon 24 Apr 2023 09:13:40 PM UTC: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:43:13: error: too few arguments to function ‘hash’
+   43 |   int pos = hash(key) % map->capacity;
+      |             ^~~~
+hashmap.c:26:6: note: declared here
+   26 | long hash( char * key, long capacity) {
+      |      ^~~~
+hashmap.c:43:7: error: unused variable ‘pos’ [-Werror=unused-variable]
+   43 |   int pos = hash(key) % map->capacity;
+      |       ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+7a59476
