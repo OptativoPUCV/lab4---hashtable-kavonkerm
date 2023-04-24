@@ -1217,3 +1217,14 @@ Mon 24 Apr 2023 09:14:24 PM UTC:
  tests:  1|5
 total_score: 10/70
 4b1696d
+Mon 24 Apr 2023 11:41:22 PM UTC: 
+ hashmap.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:75:9: error: ‘true’ undeclared (first use in this function)
+   75 |   while(true){
+      |         ^~~~
+hashmap.c:75:9: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+5829ccf
