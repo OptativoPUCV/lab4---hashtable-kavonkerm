@@ -4,7 +4,7 @@
 #include <math.h>
 #include <ctype.h>
 #include "hashmap.h"
-#include <stdboo.h>
+#include <stdbool.h>
 
 
 typedef struct HashMap HashMap;
