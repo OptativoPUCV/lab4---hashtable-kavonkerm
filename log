@@ -1271,3 +1271,17 @@ hashmap.c:70:6: note: declared here
 cc1: all warnings being treated as errors
 Compilation failed
 53d06f2
+Tue 09 May 2023 10:18:02 PM UTC: 
+ hashmap.c | 17 ++++++++---------
+ 1 file changed, 8 insertions(+), 9 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:45:7: error: expected expression before ‘)’ token
+   45 |   if ()
+      |       ^
+hashmap.c:44:8: error: unused variable ‘pos’ [-Werror=unused-variable]
+   44 |   long pos = hash(key,map->capacity);
+      |        ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+38aea58
