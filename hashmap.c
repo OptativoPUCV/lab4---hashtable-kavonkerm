@@ -74,17 +74,17 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
-  HashMap *map = (HashMap *) malloc(sizeof(HashMap));
-  if (map == NULL){
+  HashMap *mapa = (HashMap *) malloc(sizeof(HashMap));
+  if (mapa == NULL){
     return NULL;
   }
-  map->capacity = capacity;
-  map->buckets = (Pair **) calloc(capacity,sizeof(Pair *));
-  if (map->buckets == NULL){
+  mapa->capacity = capacity;
+  mapa->buckets = (Pair **) calloc(capacity,sizeof(Pair *));
+  if (mapa->buckets == NULL){
     return NULL;
   }
-  map->size = 0;
-  map->current = -1;
+  mapa->size = 0;
+  mapa->current = -1;
   return map;
 }
 
@@ -95,14 +95,14 @@ void eraseMap(HashMap * map,  char * key) {
     map->current =  pos;
     (*(map->buckets+pos))->key = NULL;
   }else{
-    for(long i = 0, it = pos+1; i < map->capacity; i++, it++){
-      it = it%map->capacity;
+    for(long i = 0, j = pos+1; i < map->capacity; i++, j++){
+      j = j % map->capacity;
 
-      if(*(map->buckets+it) ==  NULL) continue;
+      if(*(map->buckets+j) ==  NULL) continue;
       
-      if(is_equal(key, (*(map->buckets+it))->key)){
-        map->current = it;
-        (*(map->buckets+it))->key = NULL;
+      if(is_equal(key, (*(map->buckets+j))->key)){
+        map->current = j;
+        (*(map->buckets+j))->key = NULL;
       }
     }
   }
@@ -114,7 +114,6 @@ Pair * searchMap(HashMap * map,  char * key) {
   while(true){
     if(map->buckets[aux] == NULL || map->buckets[aux]->key == NULL)
       return NULL;
-
     if(is_equal(map->buckets[aux]->key , key)){
       map->current = aux;
       return map->buckets[aux];
@@ -141,9 +140,7 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
   for(long it = map->current+1; it < map->capacity; it++){
-
     if(*(map->buckets+it) ==  NULL) continue;
-
     if( (*(map->buckets+it))->key != NULL ){
       map->current = it;
       return *(map->buckets+it);
