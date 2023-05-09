@@ -1244,3 +1244,30 @@ Mon 24 Apr 2023 11:41:46 PM UTC:
  tests:  4|4
 total_score: 20/70
 0bda05d
+Tue 09 May 2023 10:17:29 PM UTC: 
+ hashmap.c | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:45:7: error: expected expression before ‘)’ token
+   45 |   if ()
+      |       ^
+hashmap.c:44:8: error: unused variable ‘pos’ [-Werror=unused-variable]
+   44 |   long pos = hash(key,map->capacity);
+      |        ^~~
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:77:14: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   77 |       return *(map->buckets+i);
+      |              ^~~~~~~~~~~~~~~~~
+hashmap.c:70:6: note: declared here
+   70 | void eraseMap(HashMap * map,  char * key) {
+      |      ^~~~~~~~
+hashmap.c:80:10: error: ‘return’ with a value, in function returning void [-Werror=return-type]
+   80 |   return NULL;
+      |          ^~~~
+hashmap.c:70:6: note: declared here
+   70 | void eraseMap(HashMap * map,  char * key) {
+      |      ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+53d06f2
